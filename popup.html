@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YouTube Shorts Blocker</title>
+  <link rel="stylesheet" href="popup.css">
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="background-animation">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
+  </div>
+  
+  <div class="glass-container">
+    <div class="header">
+      <div class="logo-wrapper">
+        <img src="icons/icon48.png" alt="Logo" class="logo-icon">
+        <div class="pulse-ring"></div>
+      </div>
+      <div>
+        <h1 class="gradient-text">Shorts Blocker</h1>
+        <p class="subtitle">Focus mode enabled</p>
+      </div>
+    </div>
+    
+    <div class="control-panel">
+      <div class="status-indicator">
+        <div class="pulse-dot" id="statusPulse"></div>
+        <span class="status-text" id="statusText">Shield Active</span>
+      </div>
+      
+      <label class="modern-toggle">
+        <input type="checkbox" id="toggleBlocker" checked>
+        <span class="toggle-slider">
+          <span class="knob">
+            <svg class="toggle-icon on-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+            <svg class="toggle-icon off-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+          </span>
+        </span>
+      </label>
+    </div>
+
+    <div class="info-card">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="info-icon"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line></svg>
+      <p>Reload YouTube tabs to apply changes properly.</p>
+    </div>
+    
+    <div class="footer">
+      <p>Developed with <span class="heart">❤</span> by <span class="developer-link">Abhishek</span></p>
+    </div>
+  </div>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

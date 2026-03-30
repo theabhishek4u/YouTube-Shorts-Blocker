@@ -1,0 +1,76 @@
+/* YouTube Shorts Blocker - CSS Rules */
+
+/* Hide when extension is enabled (default state) */
+body.shorts-blocker-enabled {
+
+  /* Hide Shorts shelf on home page */
+  ytd-rich-section-renderer:has(ytd-rich-shelf-renderer[is-shorts]),
+  ytd-reel-shelf-renderer,
+  ytd-rich-shelf-renderer[is-shorts],
+  /* Newer grid-style Shorts shelf */
+  grid-shelf-view-model:has(ytm-shorts-lockup-view-model),
+  grid-shelf-view-model:has(ytm-shorts-lockup-view-model-v2),
+  grid-shelf-view-model:has(a[href*="/shorts/"]),
+  ytd-item-section-renderer:has(grid-shelf-view-model):has(ytm-shorts-lockup-view-model),
+  /* Individual Shorts lockup components */
+  ytm-shorts-lockup-view-model,
+  ytm-shorts-lockup-view-model-v2 {
+    display: none !important;
+  }
+
+  /* Hide Shorts tab in navigation/sidebar */
+  ytd-guide-entry-renderer:has(a[title="Shorts"]),
+  ytd-guide-entry-renderer:has(a[href="/shorts/"]),
+  ytd-mini-guide-entry-renderer:has(a[title="Shorts"]),
+  ytd-mini-guide-entry-renderer:has(a[href="/shorts/"]),
+  ytd-mini-guide-entry-renderer:has(a[aria-label="Shorts"]),
+  a[title="Shorts"],
+  a[href="/shorts/"][aria-label="Shorts"] {
+    display: none !important;
+  }
+
+  /* Hide Shorts shelf in search results */
+  ytd-reel-shelf-renderer {
+    display: none !important;
+  }
+
+  /* Hide individual Shorts videos anywhere (search, home, recommended) */
+  ytd-video-renderer:has(a[href*="/shorts/"]),
+  ytd-grid-video-renderer:has(a[href*="/shorts/"]),
+  ytd-compact-video-renderer:has(a[href*="/shorts/"]),
+  ytd-rich-item-renderer:has(a[href*="/shorts/"]) {
+    display: none !important;
+  }
+
+  /* Hide Shorts in recommendations/sidebar */
+  ytd-compact-video-renderer:has(a[href*="/shorts/"]) {
+    display: none !important;
+  }
+
+  /* Hide Shorts chips/filters */
+  yt-chip-cloud-chip-renderer:has([title="Shorts"]),
+  ytd-feed-filter-chip-bar-renderer yt-chip-cloud-chip-renderer:has(yt-formatted-string:contains("Shorts")) {
+    display: none !important;
+  }
+
+  /* Hide Shorts in subscriptions feed - only if main link is shorts */
+  ytd-grid-video-renderer:has(> div > a[href*="/shorts/"]),
+  ytd-rich-item-renderer:has(ytd-thumbnail a[href*="/shorts/"]) {
+    display: none !important;
+  }
+
+  /* Hide Shorts notification badge */
+  ytd-notification-renderer:has(a[href*="/shorts/"]) {
+    display: none !important;
+  }
+
+  /* Hide YouTube Playables shelf */
+  ytd-rich-section-renderer:has(a[href="/playables"]),
+  ytd-rich-shelf-renderer:has(a[href="/playables"]),
+  ytd-rich-item-renderer[is-mini-game-card-shelf],
+  ytd-mini-game-card-view-model,
+  mini-game-card-view-model,
+  a[href*="/playables/"] {
+    display: none !important;
+  }
+}
